@@ -33,7 +33,6 @@ os.system('mkdir results')
 
 index_file = "index.idx"
 output_dir = "results"
-input_dir = "Seqs"
 threads = 2
 bootstraps = 30
 
@@ -50,8 +49,8 @@ os.makedirs(output_dir, exist_ok=True)
 #Loop through each SRR id and run kallisto
 for srr in SRR:
     output_path = os.path.join(output_dir, srr)
-    input_file_1 = os.path.join(input_dir, f"{srr}_1.fastq")
-    input_file_2 = os.path.join(input_dir, f"{srr}_2.fastq")
+    input_file_1 = f"{srr}_1.fastq"
+    input_file_2 = f"{srr}_2.fastq"
 
     print(f"Running kallisto for {srr}...")
 
@@ -140,13 +139,13 @@ for srr, donor, cond in zip(SRR,donor,conditions):
 
 #Part 6 - Spades Assembly
 
-os.system("spades.py -k 77 -t 2 --only-assembler --pe-1 1 SRR5660030_mapped_1.fq --pe-2 1 SRR5660030_mapped_2.fq --pe-1 2 SRR5660033_mapped_1.fq --pe-2 2 SRR5660033_mapped_2.fq -o Donor_1_assembly/")
-os.system("spades.py -k 77 -t 2 --only-assembler --pe-1 1 SRR5660044_mapped_1.fq --pe-2 1 SRR5660044_mapped_2.fq --pe-1 2 SRR5660045_mapped_1.fq --pe-2 2 SRR5660045_mapped_2.fq -o Donor_3_assembly/")   
+os.system("spades.py -k 77 -t 2 --only-assembler --pe-1 1 SampleSRR5660030_mapped_1.fq --pe-2 1 SampleSRR5660030_mapped_2.fq --pe-1 2 SampleSRR5660033_mapped_1.fq --pe-2 2 SampleSRR5660033_mapped_2.fq -o Donor_1_assembly/")
+os.system("spades.py -k 77 -t 2 --only-assembler --pe-1 1 SampleSRR5660044_mapped_1.fq --pe-2 1 SampleSRR5660044_mapped_2.fq --pe-1 2 SampleSRR5660045_mapped_1.fq --pe-2 2 SampleSRR5660045_mapped_2.fq -o Donor_3_assembly/")   
 
 log.write("SPAdes Commands:\n")
-log.write("spades.py -k 77 -t 2 --only-assembler --pe-1 1 SRR5660030_mapped_1.fq --pe-2 1 SRR5660030_mapped_2.fq --pe-1 2 SRR5660033_mapped_1.fq --pe-2 2 SRR5660033_mapped_2.fq -o Donor_1_assembly/")
+log.write("spades.py -k 77 -t 2 --only-assembler --pe-1 1 SRR5660030_mapped_1.fq --pe-2 1 SampleSRR5660030_mapped_2.fq --pe-1 2 SampleSRR5660033_mapped_1.fq --pe-2 2 SampleSRR5660033_mapped_2.fq -o Donor_1_assembly/")
 log.write("\n")
-log.write("spades.py -k 77 -t 2 --only-assembler --pe-1 1 SRR5660044_mapped_1.fq --pe-2 1 SRR5660044_mapped_2.fq --pe-1 2 SRR5660045_mapped_1.fq --pe-2 2 SRR5660045_mapped_2.fq -o Donor_3_assembly/")
+log.write("spades.py -k 77 -t 2 --only-assembler --pe-1 1 SRR5660044_mapped_1.fq --pe-2 1 SampleSRR5660044_mapped_2.fq --pe-1 2 SampleSRR5660045_mapped_1.fq --pe-2 2 SampleSRR5660045_mapped_2.fq -o Donor_3_assembly/")
 log.write("\n")
 
 #Part 7 - BLAST
