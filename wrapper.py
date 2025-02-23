@@ -146,9 +146,9 @@ os.system("spades.py -k 77 -t 2 --only-assembler --pe-1 1 SampleSRR5660044_mappe
 
 log.write("\n")
 log.write("SPAdes Commands:\n")
-log.write("spades.py -k 77 -t 2 --only-assembler --pe-1 1 SRR5660030_mapped_1.fq --pe-2 1 SampleSRR5660030_mapped_2.fq --pe-1 2 SampleSRR5660033_mapped_1.fq --pe-2 2 SampleSRR5660033_mapped_2.fq -o Donor_1_assembly/")
+log.write("spades.py -k 77 -t 2 --only-assembler --pe-1 1 SampleSRR5660030_mapped_1.fq --pe-2 1 SampleSRR5660030_mapped_2.fq --pe-1 2 SampleSRR5660033_mapped_1.fq --pe-2 2 SampleSRR5660033_mapped_2.fq -o Donor_1_assembly/")
 log.write("\n")
-log.write("spades.py -k 77 -t 2 --only-assembler --pe-1 1 SRR5660044_mapped_1.fq --pe-2 1 SampleSRR5660044_mapped_2.fq --pe-1 2 SampleSRR5660045_mapped_1.fq --pe-2 2 SampleSRR5660045_mapped_2.fq -o Donor_3_assembly/")
+log.write("spades.py -k 77 -t 2 --only-assembler --pe-1 1 SampleSRR5660044_mapped_1.fq --pe-2 1 SampleSRR5660044_mapped_2.fq --pe-1 2 SampleSRR5660045_mapped_1.fq --pe-2 2 SampleSRR5660045_mapped_2.fq -o Donor_3_assembly/")
 log.write("\n")
 log.write("\n")
 
