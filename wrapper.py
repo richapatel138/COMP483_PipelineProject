@@ -3,11 +3,6 @@ import subprocess
 from Bio import SeqIO
 import pandas as pd
 
-os.system('mkdir PipelineProject_Richa_Patel')
-os.chdir("PipelineProject_Richa_Patel") 
-
-os.system('gh repo clone richapatel138/PipelineProject_Richa_Patel')
-
 log = open("PipelineProject.log", "w")
 
 #PART 2
@@ -67,10 +62,9 @@ for srr in SRR:
         "-b", str(bootstraps),
         "-t", str(threads),
         input_file_1,
-        input_file_2
-   ]
+        input_file_2]
 
-    os.system(cmd)
+    subprocess.run(cmd, check=True)
 
     print(f"Completed {srr}")
 
@@ -119,10 +113,9 @@ for srr in SRR:
         "-1", input_file_1,
         "-2", input_file_2,
         "-S", sam_file,
-        "--al-conc", mapped_reads
-   ]
+        "--al-conc", mapped_reads]
 
-    os.system(cmd)
+    subprocess.run(cmd, check=True)
 
     print(f"Completed {srr}")
 
