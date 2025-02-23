@@ -78,7 +78,7 @@ for item, name in zip(SRR, conditions):
     df = pd.read_csv(tsv_path, sep='\t')
     df_mean = round(df['tpm'].mean(), 2)
     df_min = round(df['tpm'].min(), 2)
-    df_med = rounf(df['tpm'].median(), 2)
+    df_med = round(df['tpm'].median(), 2)
     df_max = round(df['tpm'].max(), 2)
     log.write(f'{item}\t{name}\t{df_min}\t{df_med}\t{df_mean}\t{df_max}\n')
 
