@@ -85,7 +85,6 @@ for item, name in zip(SRR, conditions):
 #Part 4 - Sleuth
 os.system('Rscript sleuth_commands.R')
 
-import pandas as pd
 
 df = pd.read_csv('sleuth_results.txt', sep=' ')
 log.write("\n")
