@@ -153,10 +153,14 @@ os.system('mkdir BLAST')
 os.chdir("BLAST") 
 os.system('datasets download virus genome taxon Betaherpesvirinae --refseq --include genome')
 os.system('unzip ncbi_dataset.zip')
-os.system('cd ..')
-os.system('makeblastdb -in BLAST/ncbi_dataset/data/genomic.fna -out betaherpesvirinae -title betaherpesvirinae -dbtype nucl')
+os.chdir("..") 
+os.system("cp BLAST/ncbi_dataset/data/genomic.fna genomic.fna")
+os.system('makeblastdb -in genomic.fna -out betaherpesvirinae -title betaherpesvirinae -dbtype nucl')
 
-assembly_contigs = ['/Donor_1_assembly/contigs.fasta', '/Donor_3_assembly/contigs.fasta']
+os.system("cp Donor_1_assembly/contigs.fasta 1contigs.fasta")
+os.system("cp Donor_3_assembly/contigs.fasta 3contigs.fasta")
+
+assembly_contigs = ['1contigs.fasta', '3contigs.fasta']
 first_contigs = ['Donor_1_contig', 'Donor_3_contig']
 
 for assembly,contig in zip(assembly_contigs,first_contigs):
