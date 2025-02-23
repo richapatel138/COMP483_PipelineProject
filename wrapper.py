@@ -156,7 +156,7 @@ os.system('unzip ncbi_dataset.zip')
 os.system('cd ..')
 os.system('makeblastdb -in BLAST/ncbi_dataset/data/genomic.fna -out betaherpesvirinae -title betaherpesvirinae -dbtype nucl')
 
-assembly_contigs = ['Donor_1_assembly/contigs.fasta', 'Donor_3_assembly/contigs.fasta']
+assembly_contigs = ['/Donor_1_assembly/contigs.fasta', '/Donor_3_assembly/contigs.fasta']
 first_contigs = ['Donor_1_contig', 'Donor_3_contig']
 
 for assembly,contig in zip(assembly_contigs,first_contigs):
