@@ -24,6 +24,7 @@ with open("HCMV_CDS.fasta", "w") as fasta_out:
 
 log.write(f"The HCMV genome (NC_006273.2) has {cds_count} CDS.")
 log.write("\n")
+log.write("\n")
 
 os.system('kallisto index -i index.idx HCMV_CDS.fasta')
 
@@ -75,10 +76,10 @@ log.write("\n")
 for item, name in zip(SRR, conditions):
     tsv_path = f'results/{item}/abundance.tsv'
     df = pd.read_csv(tsv_path, sep='\t')
-    df_mean = df['tpm'].mean()
-    df_min = df['tpm'].min()
-    df_med = df['tpm'].median()
-    df_max = df['tpm'].max()
+    df_mean = round(df['tpm'].mean(), 2)
+    df_min = round(df['tpm'].min(), 2)
+    df_med = rounf(df['tpm'].median(), 2)
+    df_max = round(df['tpm'].max(), 2)
     log.write(f'{item}\t{name}\t{df_min}\t{df_med}\t{df_mean}\t{df_max}\n')
 
 #Part 4 - Sleuth
@@ -89,6 +90,7 @@ import pandas as pd
 df = pd.read_csv('sleuth_results.txt', sep=' ')
 log.write("\n")
 log.write(f"{df[['target_id', 'test_stat', 'pval', 'qval']]}")
+log.write("\n")
 log.write("\n")
 
 #Part 5
@@ -142,10 +144,12 @@ for srr, donor, cond in zip(SRR,donor,conditions):
 os.system("spades.py -k 77 -t 2 --only-assembler --pe-1 1 SampleSRR5660030_mapped_1.fq --pe-2 1 SampleSRR5660030_mapped_2.fq --pe-1 2 SampleSRR5660033_mapped_1.fq --pe-2 2 SampleSRR5660033_mapped_2.fq -o Donor_1_assembly/")
 os.system("spades.py -k 77 -t 2 --only-assembler --pe-1 1 SampleSRR5660044_mapped_1.fq --pe-2 1 SampleSRR5660044_mapped_2.fq --pe-1 2 SampleSRR5660045_mapped_1.fq --pe-2 2 SampleSRR5660045_mapped_2.fq -o Donor_3_assembly/")   
 
+log.write("\n")
 log.write("SPAdes Commands:\n")
 log.write("spades.py -k 77 -t 2 --only-assembler --pe-1 1 SRR5660030_mapped_1.fq --pe-2 1 SampleSRR5660030_mapped_2.fq --pe-1 2 SampleSRR5660033_mapped_1.fq --pe-2 2 SampleSRR5660033_mapped_2.fq -o Donor_1_assembly/")
 log.write("\n")
 log.write("spades.py -k 77 -t 2 --only-assembler --pe-1 1 SRR5660044_mapped_1.fq --pe-2 1 SampleSRR5660044_mapped_2.fq --pe-1 2 SampleSRR5660045_mapped_1.fq --pe-2 2 SampleSRR5660045_mapped_2.fq -o Donor_3_assembly/")
+log.write("\n")
 log.write("\n")
 
 #Part 7 - BLAST
@@ -183,6 +187,7 @@ donor_3_output = subprocess.getoutput("head -10 Donor_3_BLAST")
 log.write(f'Donor1:\n')
 log.write(f'sacc\tpident\tlength\tqstart\tqend\tsstart\tsend\tbitscore\tevaluet\tstitle\n')
 log.write(donor_1_output)
+log.write("\n")
 log.write("\n")
 
 log.write(f'Donor3:\n')
