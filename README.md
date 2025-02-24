@@ -9,6 +9,7 @@ Dependencies:
 - BLAST+ (https://www.ncbi.nlm.nih.gov/books/NBK279690/)
 - Biopython (https://biopython.org/)
 - fasterq-dump (https://github.com/ncbi/sra-tools/wiki/HowTo:-fasterq-dump_
+- Please see the links for installation and documentation.
 
 Packages: 
 - os (import os)
