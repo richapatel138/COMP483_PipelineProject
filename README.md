@@ -42,18 +42,18 @@ Part 1: Getting the Seqs
 - Retrieve the HCMV genome (NC_006273.2) from NCBI.
 - Extract coding sequences (CDS) into a FASTA file.
 - Outputs CDS statistic to log file.
+- Builds a kallisto index.
 
 ### Part 3: Transcript Quantification with Kallisto
-- Builds a kallisto index.
 - Quantifies transcript abundance for provided sequence read files.
 - Outputs TPM statistics to log file.
 
 ### Part 4: Differential Expression Analysis with Sleuth
 - Uses Sleuth (R package) for differential expression analysis.
-- Outputs statistical results to log file.
+- Outputs significant transcripts (FDR < 0.05) results to log file.
 
 ### Part 5: Genome Alignment with Bowtie2
-- Downloads and indexes a reference genome.
+- Downloads and indexes a reference genome for HCMV.
 - Aligns sequencing reads to the reference genome.
 - Logs the number of read pairs before and after filtering.
 
