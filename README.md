@@ -86,7 +86,7 @@ Part 1: Getting the Seqs
   - `git clone https://github.com/richapatel138/COMP483_PipelineProject.git`
 - Move into the cloned respository
   - `cd COMP483_PipelineProject`
-- Run the wrapper .py script
+- Run the wrapper.py script
   - `python wrapper.py`
 - There should be a new directory (`PipelineProject_Richa_Patel`) with all created output and the .log file.
   - `cd PipelineProject_Richa_Patel`
