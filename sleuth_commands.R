@@ -6,7 +6,7 @@ library(dplyr)
 
 #read in the table you made describing samples and kallisto output, 
 #assign to variable name stab 
-stab = read.table("sleuth_table.txt",header=TRUE)
+stab = read.table("../sleuth_table.txt",header=TRUE)
 
 #initialize sleuth object using sleuth_prep function from sleuth library
 so = sleuth_prep(stab)
