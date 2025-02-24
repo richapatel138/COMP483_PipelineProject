@@ -79,7 +79,7 @@ Part 1: Getting the Seqs
 
 ## Running with Test Input
 - In order or run the wrapper script with test input, first clone this repository to whatever directory you are working in:
-  - `git clone https://github.com/richapatel138/PipelineProject_Richa_Patel.git`
+  - `git clone https://github.com/richapatel138/COMP483_PipelineProject.git`
 - Move into the cloned respository
   - `cd PipelineProject_Richa_Patel`
 - Run the wrapper .py script
