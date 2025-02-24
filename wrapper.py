@@ -97,7 +97,7 @@ for srr in SRR:
 print("done with Kallisto!")
 
 #get TMP output
-log.write(f'sample\tcondition\tmin_tpm\tmed_tpm\tmeam_tpm\tmax_tpm') #format the header in the .log
+log.write(f'sample\tcondition\tmin_tpm\tmed_tpm\tmean_tpm\tmax_tpm') #format the header in the .log
 log.write("\n")
 for item, name in zip(SRR, conditions): #for each SRR kallisto result
     tsv_path = f'results/{item}/abundance.tsv' #path to where the abundance.tsv is located
