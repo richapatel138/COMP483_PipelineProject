@@ -3,6 +3,9 @@ import subprocess
 from Bio import SeqIO
 import pandas as pd
 
+os.system("mkdir PipelineProject_Richa_Patel")
+os.chdir("PipelineProject_Richa_Patel")
+
 log = open("PipelineProject.log", "w")
 
 #PART 2
@@ -37,12 +40,13 @@ output_dir = "results"
 threads = 2
 bootstraps = 30
 
-with open('SRR_info') as f: #open the file
+with open('../SRR_info') as f: #open the file
     srr_info = f.read().splitlines()
 
 SRR = srr_info[0::3]
 donor = srr_info[1::3]
 conditions = srr_info[2::3]
+input_dir = "../"
 
 #make sure output dict exits
 os.makedirs(output_dir, exist_ok=True)
@@ -50,8 +54,8 @@ os.makedirs(output_dir, exist_ok=True)
 #Loop through each SRR id and run kallisto
 for srr in SRR:
     output_path = os.path.join(output_dir, srr)
-    input_file_1 = f"{srr}_1.fastq"
-    input_file_2 = f"{srr}_2.fastq"
+    input_file_1 = os.path.join(input_dir, f"{srr}_1.fastq")
+    input_file_2 = os.path.join(input_dir, f"{srr}_2.fastq")
 
     print(f"Running kallisto for {srr}...")
 
@@ -83,8 +87,9 @@ for item, name in zip(SRR, conditions):
     log.write(f'{item}\t{name}\t{df_min}\t{df_med}\t{df_mean}\t{df_max}\n')
 
 #Part 4 - Sleuth
-os.system('Rscript sleuth_commands.R')
+os.system('Rscript ../sleuth_commands.R')
 
+import pandas as pd
 
 df = pd.read_csv('sleuth_results.txt', sep=' ')
 log.write("\n")
@@ -98,10 +103,11 @@ os.system('unzip ncbi_dataset.zip')
 os.system('bowtie2-build ncbi_dataset/data/GCF_000845245.1/GCF_000845245.1_ViralProj14559_genomic.fna HCNV')
 
 index_file = "HCNV"
+input_dir = "../"
 
 for srr in SRR:
-    input_file_1 = f"{srr}_1.fastq"
-    input_file_2 = f"{srr}_2.fastq"
+    input_file_1 = os.path.join(input_dir, f"{srr}_1.fastq")
+    input_file_2 = os.path.join(input_dir, f"{srr}_2.fastq")
     sam_file = f"{srr}map.sam"
     mapped_reads = f"{srr}_mapped_%.fq"
 
@@ -124,7 +130,7 @@ print("Done with Bowtie!")
 #number of reads before and after
 #loop through each SRR id and calculate reads
 for srr, donor, cond in zip(SRR,donor,conditions):
-    input_file = f"{srr}_1.fastq"
+    input_file = os.path.join(input_dir, f"{srr}_1.fastq")
     mapped_file = f"{srr}_mapped_1.fq"
 
     with open(input_file) as f: #open the file
@@ -145,9 +151,9 @@ os.system("spades.py -k 77 -t 2 --only-assembler --pe-1 1 SampleSRR5660044_mappe
 
 log.write("\n")
 log.write("SPAdes Commands:\n")
-log.write("spades.py -k 77 -t 2 --only-assembler --pe-1 1 SampleSRR5660030_mapped_1.fq --pe-2 1 SampleSRR5660030_mapped_2.fq --pe-1 2 SampleSRR5660033_mapped_1.fq --pe-2 2 SampleSRR5660033_mapped_2.fq -o Donor_1_assembly/")
+log.write("spades.py -k 77 -t 2 --only-assembler --pe-1 1 SRR5660030_mapped_1.fq --pe-2 1 SampleSRR5660030_mapped_2.fq --pe-1 2 SampleSRR5660033_mapped_1.fq --pe-2 2 ampleSRR5660033_mapped_2.fq -o Donor_1_assembly/")
 log.write("\n")
-log.write("spades.py -k 77 -t 2 --only-assembler --pe-1 1 SampleSRR5660044_mapped_1.fq --pe-2 1 SampleSRR5660044_mapped_2.fq --pe-1 2 SampleSRR5660045_mapped_1.fq --pe-2 2 SampleSRR5660045_mapped_2.fq -o Donor_3_assembly/")
+log.write("spades.py -k 77 -t 2 --only-assembler --pe-1 1 SRR5660044_mapped_1.fq --pe-2 1 SampleSRR5660044_mapped_2.fq --pe-1 2 SampleSRR5660045_mapped_1.fq --pe-2 2 SampleSRR5660045_mapped_2.fq -o Donor_3_assembly/")
 log.write("\n")
 log.write("\n")
 
