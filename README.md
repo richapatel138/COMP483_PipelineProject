@@ -81,8 +81,12 @@ Part 1: Getting the Seqs
 - In order or run the wrapper script with test input, first clone this repository to whatever directory you are working in:
   - `git clone https://github.com/richapatel138/COMP483_PipelineProject.git`
 - Move into the cloned respository
-  - `cd PipelineProject_Richa_Patel`
+  - `cd COMP483_PipelineProject`
 - Run the wrapper .py script
   - `python wrapper.py`
+- There should be a new directory (`PipelineProject_Richa_Patel`) with all created output and the .log file.
+  - `cd PipelineProject_Richa_Patel`
+- To view the contents of the log file:
+  - `cat PipelingProject.log`
 
 
