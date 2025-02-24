@@ -15,6 +15,7 @@ Packages:
 - os (import os)
 - subprocess (import subprocess)
 - pandas (import pandas as pd)
+- SeqIO (from Bio import SeqIO)
 
 ## Pipeline Steps
 
