@@ -88,6 +88,6 @@ Part 1: Getting the Seqs
 - There should be a new directory (`PipelineProject_Richa_Patel`) with all created output and the .log file.
   - `cd PipelineProject_Richa_Patel`
 - To view the contents of the log file:
-  - `cat PipelingProject.log`
+  - `cat PipelineProject.log`
 
 
