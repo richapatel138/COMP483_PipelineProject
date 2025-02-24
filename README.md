@@ -79,6 +79,7 @@ Part 1: Getting the Seqs
 - Needs to be space or tab seperated, needs a header, needs to end with a newline
 
 ## Running with Test Input
+- The sample data was created by taking each paired end .fasta files created in Part 1 and extracting the first 40000 lines.
 - In order or run the wrapper script with test input, first clone this repository to whatever directory you are working in:
   - `git clone https://github.com/richapatel138/COMP483_PipelineProject.git`
 - Move into the cloned respository
