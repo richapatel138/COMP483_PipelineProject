@@ -1,20 +1,22 @@
 # PipelineProject (Richa Patel)
 
 Dependencies: 
-- Entrez NCBI (https://www.ncbi.nlm.nih.gov/books/NBK179288/) 
-- Kallisto (https://pachterlab.github.io/kallisto/manual)
-- NCBI Datasets (https://github.com/ncbi/datasets)
-- Bowtie2 (https://github.com/BenLangmead/bowtie2)
-- Spades (https://github.com/ablab/spades)
-- BLAST+ (https://www.ncbi.nlm.nih.gov/books/NBK279690/)
-- Biopython (https://biopython.org/)
-- fasterq-dump (https://github.com/ncbi/sra-tools/wiki/HowTo:-fasterq-dump)
-- Please see the links for installation and documentation.
+- **Please see the links for installation and documentation details.**
+- Python 3.10.12 (https://www.python.org/)
+- R 4.4.2 (https://cran.rstudio.com/)
+- Entrez NCBI 14.6 (https://www.ncbi.nlm.nih.gov/books/NBK179288/) 
+- Kallisto 0.51.1 (https://pachterlab.github.io/kallisto/manual)
+- NCBI Datasets 16.40.1 (https://github.com/ncbi/datasets)
+- Bowtie2 2.4.4 (https://github.com/BenLangmead/bowtie2)
+- Spades 4.0.0 (https://github.com/ablab/spades)
+- NCBI BLAST+ 2.12.0(https://www.ncbi.nlm.nih.gov/books/NBK279690/)
+- Biopython 1.83 (https://biopython.org/)
+- fasterq-dump 2.11.3 (https://github.com/ncbi/sra-tools/wiki/HowTo:-fasterq-dump)
 
 Packages: 
 - os (import os)
 - subprocess (import subprocess)
-- pandas (import pandas as pd)
+- pandas 2.1.4 (import pandas as pd)
 - SeqIO (from Bio import SeqIO)
 
 ## Pipeline Steps
