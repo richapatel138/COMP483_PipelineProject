@@ -1,6 +1,6 @@
 The HCMV genome (NC_006273.2) has 169 CDS.
 
-sample	condition	min_tpm	med_tpm	meam_tpm	max_tpm
+sample	condition	min_tpm	med_tpm	mean_tpm	max_tpm
 SRR5660030	2dpi	0.0	1877.01	5917.16	76933.3
 SRR5660033	6dpi	0.0	1980.99	5917.16	177497.0
 SRR5660044	2dpi	0.0	1906.83	5917.16	222794.0
